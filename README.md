@@ -9,7 +9,7 @@ that sticks to the top of the page.
 
 ## Demo
 
-[See here](http://htmlpreview.github.io/?https://github.com/dneustadt/css-flyout-menu/blob/master/dist/index.html)
+[See here](https://htmlpreview.github.io/?https://github.com/dneustadt/css-flyout-menu/blob/master/dist/index.html)
 
 ## Usage
 
