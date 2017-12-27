@@ -59,6 +59,13 @@ Last element: `div` with class `overlay`.
 <div class="overlay"></div>
 ```
 
+## Issues with Chrome
+
+There is a [confirmed issue](https://bugs.chromium.org/p/chromium/issues/detail?id=332189) 
+with Chrome where transitions can fire on page load. Submenus can briefly be seen on page
+load in that case. Integrating any JavaScript resources or even a single-spaced `<script> </script>`
+will circumvent that behaviour.
+
 ## Customization
 
 To alter colors, sizes etc find the accordings variables in `src/flyout-menu.scss`
