@@ -45,6 +45,35 @@ $flyout-transition: visibility 0s linear 0s,opacity 0.2s ease;
 
 $submenu-transition: visibility 0s linear 0.5s,opacity 0.5s cubic-bezier(1,0,0.58,1);
 
+@mixin mobile-active {
+  height: $menu-off-canvas-height;
+  width: $menu-off-canvas-width;
+  overflow-y: scroll;
+  & > li {
+    visibility: visible;
+  }
+  & + div.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: $menu-off-canvas-overlay-opacity;
+    background: $menu-off-canvas-overlay-color;
+    z-index: $menu-off-canvas-overlay-z-index;
+  }
+}
+
+input.menu-trigger {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: $hamburger-menu-height;
+  width: $hamburger-menu-width;
+  z-index: $hamburger-menu-z-index+1;
+  opacity: 0;
+}
+
 ul.menu {
   position: fixed;
   left: 0;
@@ -85,7 +114,7 @@ ul.menu {
     transition: $submenu-first-child-transition;
   }
   & > li.start {
-    position: relative;
+    position: fixed;
     visibility: visible;
     background: $menu-bg-color;
     text-align: center;
@@ -95,24 +124,12 @@ ul.menu {
       text-align: center;
       padding: 0;
     }
+    & + li {
+      margin-top: $hamburger-menu-height;
+    }
   }
   &:hover {
-    height: $menu-off-canvas-height;
-    width: $menu-off-canvas-width;
-    overflow-y: scroll;
-    & > li {
-      visibility: visible;
-    }
-    & + div.overlay {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      opacity: $menu-off-canvas-overlay-opacity;
-      background: $menu-off-canvas-overlay-color;
-      z-index: $menu-off-canvas-overlay-z-index;
-    }
+    @include mobile-active;
   }
 }
 
@@ -121,7 +138,17 @@ div.overlay {
   transition: $menu-default-transition;
 }
 
+@media screen and (max-width: $desktop-viewport-width - 1px) {
+  input.menu-trigger:checked + ul.menu {
+    @include mobile-active;
+  }
+}
+
 @media screen and (min-width: $desktop-viewport-width) {
+  input.menu-trigger {
+    display: none;
+  }
+
   ul.menu {
     left: $hamburger-menu-position-left;
     margin-left: -$hamburger-menu-width;
@@ -174,8 +201,12 @@ div.overlay {
       }
     }
     & > li.start {
+      position: relative;
       opacity: 1;
       visibility: visible;
+      & + li {
+        margin-top: 0;
+      }
     }
     li {
       ul {

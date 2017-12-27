@@ -15,11 +15,16 @@ that sticks to the top of the page.
 
 ### Prerequisites
 
+First element: `input` with type `checkbox` and class `menu-trigger`.
+
 Root `ul` with class `menu`. First `li` child with class `start` working as the trigger.
+
+Last element: `div` with class `overlay`.
 
 ### Example
 
 ```
+<input type="checkbox" class="menu-trigger">
 <ul class="menu" role="menu">
     <li class="start">
         <a href="#">
@@ -48,6 +53,7 @@ Root `ul` with class `menu`. First `li` child with class `start` working as the 
     </li>
     [...]
 </ul>
+<div class="overlay"></div>
 ```
 
 ## Customization
