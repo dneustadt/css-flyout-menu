@@ -15,7 +15,10 @@ that sticks to the top of the page.
 
 ### Prerequisites
 
-First element: `input` with type `checkbox` and class `menu-trigger`.
+Optional first element: `input` with type `checkbox` and class `menu-trigger`.
+
+*Note:* The trigger will toggle the off-canvas menu by tapping the hamburger icon repeatedly. By leaving the trigger out
+the user would have to tap the backdrop to close the off-canvas menu.
 
 Root `ul` with class `menu`. First `li` child with class `start` working as the trigger.
 
