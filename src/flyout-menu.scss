@@ -68,10 +68,11 @@ input.menu-trigger {
   position: fixed;
   left: 0;
   top: 0;
-  height: $hamburger-menu-height;
+  height: $hamburger-menu-height+1;
   width: $hamburger-menu-width;
   z-index: $hamburger-menu-z-index+1;
   opacity: 0;
+  cursor: pointer;
 }
 
 ul.menu {
@@ -133,20 +134,36 @@ ul.menu {
   }
 }
 
+input.menu-trigger:checked + ul.menu {
+  @include mobile-active;
+  & > li.start {
+    background: $menu-link-hover-bg-color;
+  }
+}
+
 div.overlay {
   opacity: 0;
   transition: $menu-default-transition;
 }
 
-@media screen and (max-width: $desktop-viewport-width - 1px) {
-  input.menu-trigger:checked + ul.menu {
-    @include mobile-active;
+@mixin desktop-active {
+  left: 0;
+  height: $hamburger-menu-height;
+  width: 100%;
+  padding-left: $hamburger-menu-position-left;
+  overflow: visible;
+  transition-delay: $hamburger-menu-hover-transition-delay;
+  & > li {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: $hamburger-menu-hover-transition-delay;
   }
 }
 
 @media screen and (min-width: $desktop-viewport-width) {
   input.menu-trigger {
-    display: none;
+    left: $hamburger-menu-position-left;
+    margin-left: -$hamburger-menu-width;
   }
 
   ul.menu {
@@ -155,17 +172,7 @@ div.overlay {
     overflow: visible;
     transition-delay: $hamburger-menu-transition-delay;
     &:hover {
-      left: 0;
-      height: $hamburger-menu-height;
-      width: 100%;
-      padding-left: $hamburger-menu-position-left;
-      overflow: visible;
-      transition-delay: $hamburger-menu-hover-transition-delay;
-      & > li {
-        visibility: visible;
-        opacity: 1;
-        transition-delay: $hamburger-menu-hover-transition-delay;
-      }
+      @include desktop-active;
     }
     & > li {
       position: relative;
@@ -238,6 +245,10 @@ div.overlay {
         }
       }
     }
+  }
+
+  input.menu-trigger:checked + ul.menu {
+    @include desktop-active;
   }
 
   div.overlay {
