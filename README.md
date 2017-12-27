@@ -17,8 +17,8 @@ that sticks to the top of the page.
 
 Optional first element: `input` with type `checkbox` and class `menu-trigger`.
 
-*Note:* The trigger will toggle the off-canvas menu by tapping the hamburger icon repeatedly. By leaving the trigger out
-the user would have to tap the backdrop to close the off-canvas menu.
+*Note:* The trigger will toggle the off-canvas/flyout menu by tapping/clicking the hamburger icon repeatedly. By leaving the trigger out
+the flyout will appear on hover and on mobile the user would have to tap the backdrop to close the off-canvas menu.
 
 Root `ul` with class `menu`. First `li` child with class `start` working as the trigger.
 
