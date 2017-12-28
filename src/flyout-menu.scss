@@ -41,7 +41,7 @@ $flyout-link-desktop-font-size: 22px;
 $flyout-link-desktop-line-height: 24px;
 
 $flyout-z-index: 1001;
-$flyout-transition: visibility 0s linear 0s,opacity 0.2s ease;
+$flyout-transition: visibility 0s linear 0.2s, opacity 0.2s ease 0.2s;
 
 $submenu-transition: visibility 0s linear 0.5s,opacity 0.5s cubic-bezier(1,0,0.58,1);
 

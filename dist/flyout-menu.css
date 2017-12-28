@@ -190,7 +190,7 @@ div.overlay {
     }
     ul.menu li:hover ul {
         z-index: 1001;
-        transition: visibility 0s linear 0s, opacity 0.2s ease;
+        transition: visibility 0s linear 0.2s, opacity 0.2s ease 0.2s;
     }
     ul.menu li:hover > ul {
         visibility: visible;
