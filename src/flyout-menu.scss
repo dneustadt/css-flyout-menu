@@ -179,6 +179,7 @@ div.overlay {
       float: left;
       opacity: 0;
       visibility: hidden;
+      transition: $submenu-first-child-transition, visibility 0s linear;
       transition-delay: $hamburger-menu-first-child-transition-delay;
       & > ul {
         top: 100%!important;
