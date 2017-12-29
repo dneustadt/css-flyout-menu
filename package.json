@@ -1,0 +1,39 @@
+{
+  "name": "cssFlyoutMenu",
+  "moduleName": "cssFlyoutMenu",
+  "version": "1.0.0",
+  "authors": [
+    "David Neustadt <kontakt@davidneustadt.de>"
+  ],
+  "description": "pure css responsive off-canvas/flyout menu",
+  "main": "dist/flyout-menu.min.css",
+  "keywords": [
+    "css",
+    "menu",
+    "flyout",
+    "offcanvas",
+    "pure-css",
+    "sticky",
+    "hamburger-menu"
+  ],
+  "scripts": {
+    "start": "gulp watch",
+    "compile": "gulp"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/dneustadt/css-flyout-menu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dneustadt/css-flyout-menu.git"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-rename": "^1.2.2"
+  }
+}
