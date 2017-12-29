@@ -1,6 +1,5 @@
 {
-  "name": "cssFlyoutMenu",
-  "moduleName": "cssFlyoutMenu",
+  "name": "css-flyout-menu",
   "version": "1.0.0",
   "authors": [
     "David Neustadt <kontakt@davidneustadt.de>"
